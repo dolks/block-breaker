@@ -7,7 +7,6 @@ public class BallScript : MonoBehaviour
     Vector2 paddleToBallVector;
     bool launched = false;
     Rigidbody2D rigidBody2D;
-    [SerializeField] Vector2 maxVelocity = new Vector2(4, 4);
 
     // Start is called before the first frame update
     void Start()
@@ -44,20 +43,13 @@ public class BallScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 velocityRandomness = new Vector2(
-            Random.Range(0, randomFactor), 
-            Random.Range(0, randomFactor));
+            Random.Range(0f, randomFactor), 
+            Random.Range(0f, randomFactor));
         if (launched)
         {
             GetComponent<AudioSource>().Play();
-            if (rigidBody2D.velocity.x > maxVelocity.x)
-            {
-                rigidBody2D.velocity.Set(maxVelocity.x, rigidBody2D.velocity.y);
-            }
-            if (rigidBody2D.velocity.y > maxVelocity.y)
-            {
-                rigidBody2D.velocity.Set(rigidBody2D.velocity.x, maxVelocity.y);
-            }
             rigidBody2D.velocity += velocityRandomness;
+            Debug.Log("Velocity is now " + rigidBody2D.velocity);
         }
     }
 }

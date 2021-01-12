@@ -1,0 +1,2 @@
+/Users/dolks/Documents/game_making/Unity/block-breaker/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/dolks/Documents/game_making/Unity/block-breaker/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
